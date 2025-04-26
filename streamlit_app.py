@@ -26,7 +26,7 @@ question = st.text_input("Ask me anything:")
 # Load FAISS index
 try:
     # Load pre-indexed FAISS database and metadata with dangerous deserialization enabled
-    db_pdf = FAISS.load_local("Database/pptx", OpenAIEmbeddings(), allow_dangerous_deserialization=True)
+    db_pdf = FAISS.load_local("Database/PDF", OpenAIEmbeddings(), allow_dangerous_deserialization=True)
     pdf_retriever = db_pdf.as_retriever()
     st.write("Loaded pre-indexed FAISS data successfully.")
 except Exception as e:
